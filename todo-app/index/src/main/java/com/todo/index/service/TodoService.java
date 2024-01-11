@@ -1,16 +1,26 @@
 package com.todo.index.service;
+
+import com.todo.index.config.MongoConfig;
 import com.todo.index.model.Todo;
 import com.todo.index.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
 @Service
 public class TodoService {
 
+    private final TodoRepository todoRepository;
+
+    private final MongoConfig mongoConfig;
+
     @Autowired
-    private TodoRepository todoRepository;
+    public TodoService(TodoRepository todoRepository, MongoConfig mongoConfig) {
+        this.todoRepository = todoRepository;
+        this.mongoConfig = mongoConfig;
+    }
 
     public List<Todo> getAllTodos() {
         return todoRepository.findAll();
