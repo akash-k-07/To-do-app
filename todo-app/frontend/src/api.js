@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://backendtodo-vhqc.onrender.com';
+const API_BASE_URL = 'https://backendtodo-vhqc.onrender.com/api/todo/entries';
 
 export const fetchTodos = async () => {
   try {
