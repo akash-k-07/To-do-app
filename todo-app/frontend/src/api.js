@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080/api/todo/entries';
+const API_BASE_URL = 'https://backendtodo-vhqc.onrender.com';
 
 export const fetchTodos = async () => {
   try {
