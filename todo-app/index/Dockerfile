@@ -9,7 +9,7 @@ COPY src ./src
 RUN mvn clean package
 
 # Package stage
-FROM openjdk:17-jre-slim
+FROM adoptopenjdk:17-jre-hotspot
 WORKDIR /app
 COPY --from=build /app/target/index-0.0.1-SNAPSHOT.jar ./app.jar
 EXPOSE 8080
